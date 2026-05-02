@@ -187,6 +187,16 @@
     .exp-company { font-size: var(--text-sm); color: var(--color-primary); font-weight: 500; margin-bottom: var(--space-2); }
     .exp-desc { font-size: var(--text-sm); color: var(--color-text-muted); line-height: 1.6; }
     @media (max-width: 768px) { .about-grid { grid-template-columns: 1fr; } .exp-item { grid-template-columns: 1fr; gap: var(--space-1); } }
+    /* Accordion Experience */
+.acc-item { border-bottom: 1px solid var(--color-divider); }
+.acc-header { width: 100%; display: flex; align-items: center; justify-content: space-between; gap: var(--space-4); padding: var(--space-5) 0; background: none; cursor: pointer; text-align: left; }
+.acc-header:hover .exp-role { color: var(--color-primary); }
+.acc-meta { display: flex; gap: var(--space-4); align-items: flex-start; }
+.acc-arrow { color: var(--color-text-muted); flex-shrink: 0; transition: transform 0.3s ease; }
+.acc-item.open .acc-arrow { transform: rotate(180deg); }
+.acc-body { display: none; padding-bottom: var(--space-5); padding-left: calc(140px + var(--space-4)); }
+.acc-item.open .acc-body { display: block; }
+@media (max-width: 768px) { .acc-body { padding-left: 0; } .acc-meta { flex-direction: column; gap: var(--space-1); } }
 
     /* ===== SERVICES ===== */
     #services { }
@@ -416,44 +426,76 @@
       </div>
       <div>
         <div class="experience-timeline">
-          <div class="exp-item reveal">
-            <div class="exp-date">Feb 2026 – Now</div>
-            <div class="exp-content">
-              <div class="exp-role">BI Engineer</div>
-              <div class="exp-company">eYouth · EdTech, Maddi</div>
-              <div class="exp-desc">Analyzed commercial data, built forecasting dashboards, and delivered performance reports to track sales trends and growth opportunities.</div>
+
+          <div class="acc-item reveal">
+            <button class="acc-header" onclick="toggleAcc(this)">
+              <div class="acc-meta">
+                <span class="exp-date">Feb 2026 — Now</span>
+                <div>
+                  <div class="exp-role">BI Engineer</div>
+                  <div class="exp-company">eYouth · EdTech, Maddi</div>
+                </div>
+              </div>
+              <svg class="acc-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="acc-body">
+              <p class="exp-desc">Analyzed commercial data, built forecasting dashboards, and delivered performance reports to track sales trends and growth opportunities.</p>
             </div>
           </div>
-          <div class="exp-item reveal reveal-delay-1">
-            <div class="exp-date">Aug 2025 – Jan 2026</div>
-            <div class="exp-content">
-              <div class="exp-role">Business Analyst</div>
-              <div class="exp-company">3S Software · Gov. Tech, Nasr City</div>
-              <div class="exp-desc">Built Power BI dashboards for government platforms, authored BRDs, and managed product backlogs on Azure DevOps using Agile.</div>
+
+          <div class="acc-item reveal reveal-delay-1">
+            <button class="acc-header" onclick="toggleAcc(this)">
+              <div class="acc-meta">
+                <span class="exp-date">Aug 2025 — Jan 2026</span>
+                <div>
+                  <div class="exp-role">Business Analyst</div>
+                  <div class="exp-company">3S Software · Gov. Tech, Nasr City</div>
+                </div>
+              </div>
+              <svg class="acc-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="acc-body">
+              <p class="exp-desc">Built Power BI dashboards for government platforms, authored BRDs, and managed product backlogs on Azure DevOps using Agile.</p>
             </div>
           </div>
-          <div class="exp-item reveal reveal-delay-2">
-            <div class="exp-date">Nov 2024 – Jul 2025</div>
-            <div class="exp-content">
-              <div class="exp-role">Business Analyst</div>
-              <div class="exp-company">Mucawid · Product Company, Cairo</div>
-              <div class="exp-desc">Identified customer behavior patterns, built interactive dashboards, and supported strategic planning with statistical market analysis.</div>
+
+          <div class="acc-item reveal reveal-delay-2">
+            <button class="acc-header" onclick="toggleAcc(this)">
+              <div class="acc-meta">
+                <span class="exp-date">Nov 2024 — Jul 2025</span>
+                <div>
+                  <div class="exp-role">Business Analyst</div>
+                  <div class="exp-company">Mucawid · Product Company, Cairo</div>
+                </div>
+              </div>
+              <svg class="acc-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="acc-body">
+              <p class="exp-desc">Identified customer behavior patterns, built interactive dashboards, and supported strategic planning with statistical market analysis.</p>
             </div>
           </div>
-          <div class="exp-item reveal reveal-delay-3">
-            <div class="exp-date">Mar 2024 – Sep 2025</div>
-            <div class="exp-content">
-              <div class="exp-role">Data Analysis Mentor</div>
-              <div class="exp-company">Google Developer Groups GDG · Remote</div>
-              <div class="exp-desc">Mentored 80+ learners; ran hands-on workshops on SQL, Power BI, data cleaning, and dashboarding.</div>
+
+          <div class="acc-item reveal reveal-delay-3">
+            <button class="acc-header" onclick="toggleAcc(this)">
+              <div class="acc-meta">
+                <span class="exp-date">Mar 2024 — Sep 2025</span>
+                <div>
+                  <div class="exp-role">Data Analysis Mentor</div>
+                  <div class="exp-company">Google Developer Groups GDG · Remote</div>
+                </div>
+              </div>
+              <svg class="acc-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="acc-body">
+              <p class="exp-desc">Mentored 80+ learners; ran hands-on workshops on SQL, Power BI, data cleaning, and dashboarding.</p>
             </div>
           </div>
+
         </div>
       </div>
     </div>
   </div>
-</section>
-
+</section> 
 <!-- ===== SERVICES ===== -->
 <section id="services">
   <div class="container">
@@ -810,6 +852,12 @@
     });
   })();
 
+  function toggleAcc(btn) {
+  const item = btn.closest('.acc-item');
+  const isOpen = item.classList.contains('open');
+  document.querySelectorAll('.acc-item.open').forEach(el => el.classList.remove('open'));
+  if (!isOpen) item.classList.add('open');
+}
   // Hamburger
   const ham = document.getElementById('ham');
   const mobileMenu = document.getElementById('mobile-menu');
