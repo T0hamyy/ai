@@ -86,31 +86,7 @@
       --shadow-sm: 0 1px 3px oklch(0 0 0 / 0.3); --shadow-md: 0 4px 16px oklch(0 0 0 / 0.4);
       --shadow-lg: 0 16px 40px oklch(0 0 0 / 0.5);
     }}
-.hero-name-tag {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.4em;
-  font-family: var(--font-body);
-  font-size: clamp(0.85rem, 1.5vw, 1.1rem);
-  font-weight: 600;
-  color: var(--color-primary);
-  background: var(--color-primary-highlight);
-  border: 1px solid color-mix(in oklch, var(--color-primary) 25%, transparent);
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  padding: 0.3em 0.9em;
-  border-radius: var(--radius-full);
-  margin-bottom: 0.5em;
-}
 
-.hero-name-tag::before {
-  content: '';
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background: var(--color-primary);
-  display: inline-block;
-}
     /* ===== BASE ===== */
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     html { -webkit-font-smoothing: antialiased; scroll-behavior: smooth; scroll-padding-top: 80px; }
@@ -383,14 +359,8 @@
     <div class="hero-inner">
       <div class="hero-text">
         <div class="hero-badge reveal"><span class="dot"></span> Available for projects</div>
-        <!-- <h1 class="hero-title reveal reveal-delay-1">
-          Turning Data into<br><span class="accent">Decisions</span>
-        </h1> -->
-        <h1 class="hero-title reveal reveal-delay-1">
-        <span class="hero-name-tag">Abdulrahman Tohamy</span>
-        Turning Data into<br><span class="accent">Decisions</span>
-        </h1>
 
+<div class="hero-name reveal" style="font-family:var(--font-body); font-size:var(--text-lg); font-weight:700; color:var(--color-text); letter-spacing:-0.01em; margin-bottom:var(--space-2);">Abdulrahman Tohamy</div>
         <p class="hero-subtitle reveal reveal-delay-2">
           Business Intelligence Engineer crafting dashboards, reports, and data models that drive strategy — not just decorate screens.
         </p>
