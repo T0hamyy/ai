@@ -233,6 +233,7 @@
     .project-card { background: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius-xl); overflow: hidden; transition: all var(--transition); }
     .project-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); }
     .project-thumb { aspect-ratio: 16/9; background: var(--color-surface-offset); display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden; }
+    .project-thumb img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block; }
     .project-thumb svg { width: 40px; height: 40px; color: var(--color-text-faint); }
     .project-thumb .project-thumb-bg { position: absolute; inset: 0; }
     .project-body { padding: var(--space-6); }
@@ -570,15 +571,7 @@
       <!-- Featured -->
       <div class="project-card featured reveal">
         <div class="project-thumb">
-          <div class="project-thumb-bg" style="background: linear-gradient(135deg, #012b57 0%, #0A66C2 50%, #0d3d7a 100%);"></div>
-          <svg viewBox="0 0 60 40" fill="none" style="position:relative; z-index:1; width:160px; height:auto; opacity:0.9;">
-            <rect x="2" y="28" width="8" height="10" fill="white" rx="1" opacity="0.9"/>
-            <rect x="14" y="20" width="8" height="18" fill="white" rx="1" opacity="0.85"/>
-            <rect x="26" y="10" width="8" height="28" fill="white" rx="1" opacity="0.9"/>
-            <rect x="38" y="14" width="8" height="24" fill="white" rx="1" opacity="0.8"/>
-            <rect x="50" y="6" width="8" height="32" fill="white" rx="1" opacity="0.9"/>
-            <polyline points="6,28 18,20 30,10 42,14 54,6" stroke="#70b5f9" stroke-width="2" fill="none"/>
-          </svg>
+          <img src="ecommerce-dashboard.jpg" alt="E-Commerce Sales Performance & Marketing Dashboard">
         </div>
         <div class="project-body">
           <div class="project-tags"><span class="project-tag">Power BI</span><span class="project-tag">SQL</span><span class="project-tag">E-Commerce</span></div>
@@ -587,25 +580,6 @@
           <a href="#contact" class="project-link">Request Demo <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
         </div>
       </div>
-      <!-- <!-- Card 2 -->
-      <div class="project-card reveal reveal-delay-1">
-        <div class="project-thumb">
-          <div class="project-thumb-bg" style="background: linear-gradient(135deg, #1e1b4b 0%, #3730a3 100%);"></div>
-          <svg viewBox="0 0 40 30" fill="none" style="position:relative; z-index:1; width:100px; opacity:0.9;">
-            <circle cx="20" cy="15" r="12" stroke="white" stroke-width="1.5" fill="none" opacity="0.3"/>
-            <circle cx="20" cy="15" r="7" stroke="white" stroke-width="1.5" fill="none" opacity="0.6"/>
-            <circle cx="20" cy="15" r="3" fill="white" opacity="0.9"/>
-            <line x1="20" y1="3" x2="20" y2="8" stroke="white" stroke-width="1.5"/>
-            <line x1="20" y1="22" x2="20" y2="27" stroke="white" stroke-width="1.5"/>
-          </svg>
-        </div>
-        <div class="project-body">
-          <div class="project-tags"><span class="project-tag">Power BI</span><span class="project-tag">Excel</span></div>
-          <div class="project-title">Sales Analysis Dashboard</div>
-          <div class="project-desc">Comprehensive sales data visualized to drive strategic decision-making. Tracks revenue, pipeline, team performance, and growth opportunities.</div>
-          <a href="#contact" class="project-link">Request Demo <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
-        </div>
-      </div> -->
       <!-- Card 2 -->
 <div class="project-card reveal reveal-delay-1">
   <div class="project-thumb">
@@ -616,60 +590,43 @@
     <div class="project-tags"><span class="project-tag">Power BI</span><span class="project-tag">Excel</span></div>
     <div class="project-title">Sales Analysis Dashboard</div>
     <div class="project-desc">Comprehensive sales data visualized to drive strategic decision-making. Tracks revenue, pipeline, team performance, and growth opportunities.</div>
-    <a href="#contact" class="project-link">Request Demo <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+    <a href="https://github.com/T0hamyy/Sales-Analysis-project" class="project-link">View Details <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
   </div>
 </div>
       <!-- Card 3 -->
       <div class="project-card reveal">
         <div class="project-thumb">
-          <div class="project-thumb-bg" style="background: linear-gradient(135deg, #1c1917 0%, #78350f 100%);"></div>
-          <svg viewBox="0 0 40 30" fill="none" style="position:relative; z-index:1; width:100px; opacity:0.9;">
-            <rect x="4" y="8" width="32" height="14" rx="2" stroke="white" stroke-width="1.5" fill="none"/>
-            <line x1="12" y1="12" x2="28" y2="12" stroke="white" stroke-width="1.5" opacity="0.6"/>
-            <line x1="12" y1="16" x2="22" y2="16" stroke="white" stroke-width="1.5" opacity="0.4"/>
-            <circle cx="8" cy="24" r="3" stroke="white" stroke-width="1.5" fill="none"/>
-            <circle cx="32" cy="24" r="3" stroke="white" stroke-width="1.5" fill="none"/>
-          </svg>
+          <img src="PWC Task 1 - Call Centre Dashboard_page-0002.jpg" alt="PwC Virtual – Call Center Trends Dashboard">
         </div>
         <div class="project-body">
           <div class="project-tags"><span class="project-tag">Power BI</span><span class="project-tag">SQL</span><span class="project-tag">PwC</span></div>
           <div class="project-title">PwC Virtual — Call Center Trends Dashboard</div>
           <div class="project-desc">Tracked customer satisfaction, call volumes, agent performance quadrant, and average handle time. Featured in PwC virtual work experience.</div>
-          <a href="#contact" class="project-link">View Details <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+          <a href="https://github.com/T0hamyy/PWC-Power-BI-Virtual-Work-Experience" class="project-link">View Details <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
         </div>
       </div>
       <!-- Card 4 -->
       <div class="project-card reveal reveal-delay-1">
         <div class="project-thumb">
-          <div class="project-thumb-bg" style="background: linear-gradient(135deg, #0c4a6e 0%, #0369a1 100%);"></div>
-          <svg viewBox="0 0 40 30" fill="none" style="position:relative; z-index:1; width:100px; opacity:0.9;">
-            <path d="M8 22 Q14 10 20 14 Q26 18 32 8" stroke="white" stroke-width="2" fill="none"/>
-            <circle cx="8" cy="22" r="2" fill="white"/>
-            <circle cx="20" cy="14" r="2" fill="white"/>
-            <circle cx="32" cy="8" r="2" fill="white"/>
-          </svg>
+          <img src="indian project.png" alt="Confederation of African Football (CAF)">
         </div>
         <div class="project-body">
           <div class="project-tags"><span class="project-tag">Power BI</span><span class="project-tag">CAF</span></div>
           <div class="project-title">Confederation of African Football (CAF)</div>
           <div class="project-desc">Analytics and reporting solution for one of Africa's premier sports organizations, supporting operational and performance data visibility.</div>
-          <a href="#contact" class="project-link">Inquire <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+          <a href="https://github.com/T0hamyy/Analysis-projects" class="project-link">Inquire <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
         </div>
       </div>
       <!-- Card 5 -->
       <div class="project-card reveal reveal-delay-2">
         <div class="project-thumb">
-          <div class="project-thumb-bg" style="background: linear-gradient(135deg, #14532d 0%, #16a34a 100%);"></div>
-          <svg viewBox="0 0 40 30" fill="none" style="position:relative; z-index:1; width:100px; opacity:0.9;">
-            <path d="M20 4 L28 10 L28 20 L20 26 L12 20 L12 10 Z" stroke="white" stroke-width="1.5" fill="none"/>
-            <path d="M20 10 L24 13 L24 19 L20 22 L16 19 L16 13 Z" fill="white" opacity="0.3"/>
-          </svg>
+          <img src="Sales Analysis.jpg" alt="ERP & CRM – Enterprise Resource Planning">
         </div>
         <div class="project-body">
           <div class="project-tags"><span class="project-tag">SQL</span><span class="project-tag">Tableau</span><span class="project-tag">ERP</span></div>
           <div class="project-title">ERP & CRM — Enterprise Resource Planning</div>
           <div class="project-desc">Data layer and reporting for an enterprise ERP/CRM system. Enabled end-to-end visibility from inventory to customer service KPIs.</div>
-          <a href="https://pos.ultimatefosters.com/home" target="_blank" rel="noopener noreferrer" class="project-link">Visit Live <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a>
+          <a href="https://github.com/T0hamyy/Sales-Analysis-project" target="_blank" rel="noopener noreferrer" class="project-link">Visit Live <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a>
         </div>
       </div>
     </div>
