@@ -1,0 +1,88 @@
+{
+  "courses": [
+    {
+      "video_id": "K67gmJDtbos",
+      "title": "Power BI من الصفر للاحتراف",
+      "category": "Power BI",
+      "description": "تعلم Power BI كامل من الأساسيات لبناء dashboards احترافية",
+      "badge": "Free",
+      "year": "2025"
+    },
+    {
+      "video_id": "VIDEO_ID_2",
+      "title": "SQL للمحللين - الكورس الكامل",
+      "category": "SQL",
+      "description": "كل اللي تحتاجه في SQL لتحليل البيانات بشكل احترافي",
+      "badge": "Free",
+      "year": "2025"
+    },
+    {
+      "video_id": "VIDEO_ID_3",
+      "title": "DAX Advanced Tips & Tricks",
+      "category": "DAX",
+      "description": "أقوى الـ measures والـ calculated columns في Power BI",
+      "badge": "New",
+      "year": "2025"
+    }
+  ],
+  "articles": [
+    {
+      "title": "أضف عنوان مقالتك هنا",
+      "url": "https://linkedin.com/posts/...",
+      "source": "LinkedIn",
+      "date": "2025-04-01",
+      "description": "أضف وصف مختصر للمقالة هنا",
+      "tag": "Power BI"
+    }
+  ],
+  "roadmap": [
+    {
+      "order": "1",
+      "title": "Excel & Data Basics",
+      "video_id": "",
+      "topic": "Excel",
+      "duration": "3 hrs",
+      "description": "أساسيات Excel ومعالجة البيانات — نقطة البداية الصحيحة"
+    },
+    {
+      "order": "2",
+      "title": "SQL for Data Analysis",
+      "video_id": "",
+      "topic": "SQL",
+      "duration": "5 hrs",
+      "description": "تعلم كتابة queries واستخراج البيانات من قواعد البيانات"
+    },
+    {
+      "order": "3",
+      "title": "Power BI Fundamentals",
+      "video_id": "K67gmJDtbos",
+      "topic": "Power BI",
+      "duration": "6 hrs",
+      "description": "بناء أول dashboard احترافي من الصفر — مع فيديو شرح كامل"
+    },
+    {
+      "order": "4",
+      "title": "DAX Deep Dive",
+      "video_id": "",
+      "topic": "DAX",
+      "duration": "4 hrs",
+      "description": "كتابة measures وcalculated columns متقدمة في Power BI"
+    },
+    {
+      "order": "5",
+      "title": "Python for Data Analysis",
+      "video_id": "",
+      "topic": "Python",
+      "duration": "8 hrs",
+      "description": "Pandas, NumPy, وتحليل البيانات باستخدام Python"
+    },
+    {
+      "order": "6",
+      "title": "Data Storytelling & Portfolio",
+      "video_id": "",
+      "topic": "BI",
+      "duration": "2 hrs",
+      "description": "كيف تحوّل الأرقام لقصص تؤثر في القرارات وتبني portfolio احترافي"
+    }
+  ]
+}
