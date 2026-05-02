@@ -406,8 +406,6 @@
         <a href="#skills">Skills</a>
         <a href="#projects">Projects</a>
         <a href="#courses">Courses</a>
-        <a href="#roadmap">Roadmap</a>
-        <a href="#articles">Articles</a>
         <a href="#education">Education</a>
         <a href="#contact">Contact</a>
       </div>
@@ -1051,9 +1049,9 @@
 
 
 
-  // ===== GOOGLE SHEETS API =====
-  // 🔧 ضع رابط الـ Apps Script هنا بعد الـ deployment
-  const SHEETS_API = 'https://script.google.com/macros/s/AKfycbzNoM_UXQ4c1XCFIgnSxL_a5_Hqma2_-QdKKR8dSjBNtb0dpADtGNHqVGpw5xQ_-QLIXw/exec';
+  // ===== JSON FILE DATA SOURCE =====
+  // 🔧 البيانات بتيجي من data.json في نفس الـ repo
+  const DATA_JSON = './data.json';
 
   // ===== SPIN ANIMATION =====
   const spinStyle = document.createElement('style');
@@ -1118,30 +1116,27 @@
     initReveal();
   }
 
-  // ===== LOAD FROM GOOGLE SHEETS =====
+  // ===== LOAD FROM data.json =====
   function loadFromSheets() {
-    if (!SHEETS_API || SHEETS_API === 'YOUR_APPS_SCRIPT_URL_HERE') {
-      // Fallback: show placeholder cards if no API yet
-      buildRoadmap([
-        { order: 1, title: 'Excel & Data Basics', topic: 'Excel', duration: '3 hrs', description: 'أساسيات Excel ومعالجة البيانات — نقطة البداية الصحيحة', video_id: '' },
-        { order: 2, title: 'SQL for Data Analysis', topic: 'SQL', duration: '5 hrs', description: 'تعلم كتابة queries واستخراج البيانات من قواعد البيانات', video_id: '' },
-        { order: 3, title: 'Power BI Fundamentals', topic: 'Power BI', duration: '6 hrs', description: 'بناء أول dashboard احترافي من الصفر', video_id: '' },
-        { order: 4, title: 'DAX Deep Dive', topic: 'DAX', duration: '4 hrs', description: 'كتابة measures وcalculated columns متقدمة', video_id: '' },
-        { order: 5, title: 'Python for Data Analysis', topic: 'Python', duration: '8 hrs', description: 'Pandas, NumPy, وتحليل البيانات باستخدام Python', video_id: '' },
-        { order: 6, title: 'Data Storytelling', topic: 'BI', duration: '2 hrs', description: 'كيف تحوّل الأرقام لقصص تؤثر في القرارات', video_id: '' },
-      ]);
-      buildArticles([]);
-      return;
-    }
-    fetch(`${SHEETS_API}?sheet=roadmap`)
-      .then(r => r.json()).then(buildRoadmap)
-      .catch(() => buildRoadmap([]));
-    fetch(`${SHEETS_API}?sheet=articles`)
-      .then(r => r.json()).then(buildArticles)
-      .catch(() => buildArticles([]));
-    fetch(`${SHEETS_API}?sheet=courses`)
-      .then(r => r.json()).then(buildCoursesFromSheet)
-      .catch(() => {});
+    fetch(DATA_JSON)
+      .then(r => r.json())
+      .then(data => {
+        if (data.courses && data.courses.length > 0) buildCoursesFromSheet(data.courses);
+        buildRoadmap(data.roadmap || []);
+        buildArticles(data.articles || []);
+      })
+      .catch(() => {
+        // Fallback static data if JSON not found
+        buildRoadmap([
+          { order: 1, title: 'Excel & Data Basics', topic: 'Excel', duration: '3 hrs', description: 'أساسيات Excel ومعالجة البيانات — نقطة البداية الصحيحة', video_id: '' },
+          { order: 2, title: 'SQL for Data Analysis', topic: 'SQL', duration: '5 hrs', description: 'تعلم كتابة queries واستخراج البيانات من قواعد البيانات', video_id: '' },
+          { order: 3, title: 'Power BI Fundamentals', topic: 'Power BI', duration: '6 hrs', description: 'بناء أول dashboard احترافي من الصفر', video_id: '' },
+          { order: 4, title: 'DAX Deep Dive', topic: 'DAX', duration: '4 hrs', description: 'كتابة measures وcalculated columns متقدمة', video_id: '' },
+          { order: 5, title: 'Python for Data Analysis', topic: 'Python', duration: '8 hrs', description: 'Pandas, NumPy, وتحليل البيانات باستخدام Python', video_id: '' },
+          { order: 6, title: 'Data Storytelling', topic: 'BI', duration: '2 hrs', description: 'كيف تحوّل الأرقام لقصص تؤثر في القرارات', video_id: '' },
+        ]);
+        buildArticles([]);
+      });
   }
 
   function buildCoursesFromSheet(items) {
