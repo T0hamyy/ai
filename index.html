@@ -86,7 +86,31 @@
       --shadow-sm: 0 1px 3px oklch(0 0 0 / 0.3); --shadow-md: 0 4px 16px oklch(0 0 0 / 0.4);
       --shadow-lg: 0 16px 40px oklch(0 0 0 / 0.5);
     }}
+.hero-name-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4em;
+  font-family: var(--font-body);
+  font-size: clamp(0.85rem, 1.5vw, 1.1rem);
+  font-weight: 600;
+  color: var(--color-primary);
+  background: var(--color-primary-highlight);
+  border: 1px solid color-mix(in oklch, var(--color-primary) 25%, transparent);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 0.3em 0.9em;
+  border-radius: var(--radius-full);
+  margin-bottom: 0.5em;
+}
 
+.hero-name-tag::before {
+  content: '';
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--color-primary);
+  display: inline-block;
+}
     /* ===== BASE ===== */
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     html { -webkit-font-smoothing: antialiased; scroll-behavior: smooth; scroll-padding-top: 80px; }
@@ -318,7 +342,7 @@
           <rect width="32" height="32" rx="8" fill="var(--color-primary)"/>
           <text x="50%" y="54%" dominant-baseline="middle" text-anchor="middle" font-family="Cabinet Grotesk, sans-serif" font-weight="800" font-size="15" fill="white">AN</text>
         </svg>
-        Abdulrahman
+        Tohamy.ai
       </a>
       <div class="nav-links">
         <a href="#about">About</a>
@@ -363,9 +387,10 @@
           Turning Data into<br><span class="accent">Decisions</span>
         </h1> -->
         <h1 class="hero-title reveal reveal-delay-1">
-          <span style="font-size:0.4em; font-family:var(--font-body); font-weight:500; color:var(--color-text-muted); letter-spacing:0.05em; display:block; margin-bottom:0.3em;">Abdulrahman Tohamy</span>
-          Turning Data into<br><span class="accent">Decisions</span>
+        <span class="hero-name-tag">Abdulrahman Tohamy</span>
+        Turning Data into<br><span class="accent">Decisions</span>
         </h1>
+
         <p class="hero-subtitle reveal reveal-delay-2">
           Business Intelligence Engineer crafting dashboards, reports, and data models that drive strategy — not just decorate screens.
         </p>
@@ -390,7 +415,7 @@
           </div>
           <div class="hero-avatar-badge">
             <span class="dot"></span>
-            BI Engineer @ eYouth
+            BI Engineer @ EYouth
           </div>
           <div class="floating-card">
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" stroke-width="2.5"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
