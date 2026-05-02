@@ -765,7 +765,7 @@
       </div>
       <div class="contact-form reveal reveal-delay-2">
         <div class="form-title">Send a Message</div>
-        <form id="inquiry-form" novalidate>
+        <form id="inquiry-form" action="https://formspree.io/f/mkoygavg" method="POST">
           <div class="form-grid">
             <div class="form-group">
               <label for="name">Full Name</label>
@@ -924,17 +924,24 @@
   backTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
 
   // Form
-  document.getElementById('inquiry-form').addEventListener('submit', (e) => {
-    e.preventDefault();
-    const form = e.target;
-    const btn = form.querySelector('button[type="submit"]');
-    btn.disabled = true;
-    btn.textContent = 'Sending…';
-    setTimeout(() => {
-      form.style.display = 'none';
-      document.getElementById('form-success').style.display = 'block';
-    }, 1000);
+document.getElementById('inquiry-form').addEventListener('submit', async (e) => {
+  e.preventDefault();
+  const btn = e.target.querySelector('button[type="submit"]');
+  btn.disabled = true;
+  btn.textContent = 'Sending…';
+  const res = await fetch(e.target.action, {
+    method: 'POST', body: new FormData(e.target),
+    headers: { 'Accept': 'application/json' }
   });
+  if (res.ok) {
+    e.target.style.display = 'none';
+    document.getElementById('form-success').style.display = 'block';
+  } else {
+    btn.disabled = false;
+    btn.textContent = 'Send Message';
+    alert('Something went wrong. Please try again.');
+  }
+});
 </script>
 </body>
 </html>
