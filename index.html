@@ -1265,8 +1265,26 @@ document.getElementById('inquiry-form').addEventListener('submit', async (e) => 
 });
 
   // Load dynamic content
-  loadFromSheets();
+  window.addEventListener('load', function() {
+    buildCoursesFromSheet([
+      { video_id: 'K67gmJDtbos', title: 'Power BI من الصفر للاحتراف', category: 'Power BI', description: 'تعلم Power BI كامل من الأساسيات', badge: 'Free', year: '2025' },
+      { video_id: 'VIDEO_ID_2',  title: 'SQL للمحللين - الكورس الكامل', category: 'SQL', description: 'كل اللي تحتاجه في SQL', badge: 'Free', year: '2025' },
+      { video_id: 'VIDEO_ID_3',  title: 'DAX Advanced Tips & Tricks', category: 'DAX', description: 'أقوى الـ measures في Power BI', badge: 'New', year: '2025' },
+    ]);
 
+    buildRoadmap([
+      { order: '1', title: 'Excel & Data Basics',      topic: 'Excel',    duration: '3 hrs', description: 'أساسيات Excel ومعالجة البيانات', video_id: '' },
+      { order: '2', title: 'SQL for Data Analysis',    topic: 'SQL',      duration: '5 hrs', description: 'تعلم كتابة queries واستخراج البيانات', video_id: '' },
+      { order: '3', title: 'Power BI Fundamentals',    topic: 'Power BI', duration: '6 hrs', description: 'بناء أول dashboard احترافي من الصفر', video_id: 'K67gmJDtbos' },
+      { order: '4', title: 'DAX Deep Dive',            topic: 'DAX',      duration: '4 hrs', description: 'measures وcalculated columns متقدمة', video_id: '' },
+      { order: '5', title: 'Python for Data Analysis', topic: 'Python',   duration: '8 hrs', description: 'Pandas, NumPy, وتحليل البيانات', video_id: '' },
+      { order: '6', title: 'Data Storytelling',        topic: 'BI',       duration: '2 hrs', description: 'حوّل الأرقام لقصص تؤثر في القرارات', video_id: '' },
+    ]);
+
+    buildArticles([
+      { title: 'أضف عنوان مقالتك هنا', url: 'https://linkedin.com/in/abdulrahman-nabil/', source: 'LinkedIn', date: '2025-04-01', description: 'وصف مختصر للمقالة', tag: 'Power BI' },
+    ]);
+  });
 </script>
 </body>
 </html>
