@@ -382,6 +382,7 @@
     #back-top { position: fixed; bottom: var(--space-6); right: var(--space-6); width: 44px; height: 44px; border-radius: var(--radius-full); background: var(--color-primary); color: white; display: flex; align-items: center; justify-content: center; box-shadow: var(--shadow-md); opacity: 0; pointer-events: none; transition: all var(--transition); z-index: 50; }
     #back-top.visible { opacity: 1; pointer-events: all; }
     #back-top:hover { background: var(--color-primary-hover); transform: translateY(-2px); }
+    @keyframes spin { to { transform: rotate(360deg); } }
   </style>
 </head>
 <body>
@@ -747,73 +748,7 @@
 
     <!-- 💡 لإضافة كورس جديد: انسخ الـ course-card وغير video_id واسم الكورس والوصف -->
     <div class="courses-grid" id="courses-grid">
-
-      <!-- Course Card Template - كرر الكود ده لكل كورس جديد -->
-      <a href="https://www.youtube.com/watch?v=VIDEO_ID_1" target="_blank" rel="noopener noreferrer" class="course-card reveal">
-        <div class="course-thumb">
-          <img src="https://img.youtube.com/vi/VIDEO_ID_1/maxresdefault.jpg" alt="Course 1" loading="lazy">
-          <div class="course-play">
-            <svg viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="11" fill="oklch(0 0 0 / 0.5)"/><polygon points="10,8 16,12 10,16"/></svg>
-          </div>
-          <span class="course-badge free">Free</span>
-        </div>
-        <div class="course-body">
-          <div class="course-category">Power BI</div>
-          <div class="course-title">اسم الكورس هنا</div>
-          <div class="course-desc">وصف مختصر عن الكورس — أضف هنا ما يتعلمه المشاهد.</div>
-          <div class="course-meta">
-            <span class="course-yt">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="red"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46a2.78 2.78 0 0 0-1.95 1.96A29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58A2.78 2.78 0 0 0 3.41 19.6C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.95-1.95A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" fill="white"/></svg>
-              Watch on YouTube
-            </span>
-            <span>2025</span>
-          </div>
-        </div>
-      </a>
-
-      <a href="https://www.youtube.com/watch?v=VIDEO_ID_2" target="_blank" rel="noopener noreferrer" class="course-card reveal reveal-delay-1">
-        <div class="course-thumb">
-          <img src="https://img.youtube.com/vi/VIDEO_ID_2/maxresdefault.jpg" alt="Course 2" loading="lazy">
-          <div class="course-play">
-            <svg viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="11" fill="oklch(0 0 0 / 0.5)"/><polygon points="10,8 16,12 10,16"/></svg>
-          </div>
-          <span class="course-badge new">New</span>
-        </div>
-        <div class="course-body">
-          <div class="course-category">SQL</div>
-          <div class="course-title">اسم الكورس هنا</div>
-          <div class="course-desc">وصف مختصر عن الكورس — أضف هنا ما يتعلمه المشاهد.</div>
-          <div class="course-meta">
-            <span class="course-yt">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="red"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46a2.78 2.78 0 0 0-1.95 1.96A29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58A2.78 2.78 0 0 0 3.41 19.6C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.95-1.95A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" fill="white"/></svg>
-              Watch on YouTube
-            </span>
-            <span>2025</span>
-          </div>
-        </div>
-      </a>
-
-      <a href="https://www.youtube.com/watch?v=VIDEO_ID_3" target="_blank" rel="noopener noreferrer" class="course-card reveal reveal-delay-2">
-        <div class="course-thumb">
-          <img src="https://img.youtube.com/vi/VIDEO_ID_3/maxresdefault.jpg" alt="Course 3" loading="lazy">
-          <div class="course-play">
-            <svg viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="11" fill="oklch(0 0 0 / 0.5)"/><polygon points="10,8 16,12 10,16"/></svg>
-          </div>
-          <span class="course-badge">DAX</span>
-        </div>
-        <div class="course-body">
-          <div class="course-category">DAX</div>
-          <div class="course-title">اسم الكورس هنا</div>
-          <div class="course-desc">وصف مختصر عن الكورس — أضف هنا ما يتعلمه المشاهد.</div>
-          <div class="course-meta">
-            <span class="course-yt">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="red"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46a2.78 2.78 0 0 0-1.95 1.96A29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58A2.78 2.78 0 0 0 3.41 19.6C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.95-1.95A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" fill="white"/></svg>
-              Watch on YouTube
-            </span>
-            <span>2025</span>
-          </div>
-        </div>
-      </a>
+      <!-- Cards injected by JS -->
 
     </div>
   </div>
@@ -1058,6 +993,11 @@
   spinStyle.textContent = '@keyframes spin { to { transform: rotate(360deg); } }';
   document.head.appendChild(spinStyle);
 
+  // ===== INIT REVEAL for dynamically injected elements =====
+  function initReveal() {
+    document.querySelectorAll('.reveal:not(.visible)').forEach(el => revealObserver.observe(el));
+  }
+
   // ===== BUILD ROADMAP =====
   function buildRoadmap(items) {
     const container = document.getElementById('roadmap-list');
@@ -1146,7 +1086,7 @@
     container.innerHTML = items.map((item, i) => `
       <a href="https://www.youtube.com/watch?v=${item.video_id}" target="_blank" rel="noopener noreferrer" class="course-card reveal ${i > 0 ? 'reveal-delay-' + Math.min(i, 4) : ''}">
         <div class="course-thumb">
-          <img src="https://img.youtube.com/vi/${item.video_id}/maxresdefault.jpg" alt="${item.title}" loading="lazy">
+          <img src="https://img.youtube.com/vi/${item.video_id}/maxresdefault.jpg" alt="${item.title}" loading="lazy" onerror="this.src='https://img.youtube.com/vi/${item.video_id}/hqdefault.jpg'">
           <div class="course-play">
             <svg viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="11" fill="oklch(0 0 0 / 0.5)"/><polygon points="10,8 16,12 10,16"/></svg>
           </div>
